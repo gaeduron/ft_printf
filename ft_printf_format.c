@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 13:38:42 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/02 15:44:09 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/02 17:53:48 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ void	print_fmt(t_flag *flag, const char *fmt)
 		else
 		{
 			fmt++;
-//			get_flags(flag, &fmt);
-			write_buff(flag, fmt);
-			fmt++;
+			get_flags(flag, &fmt);
+			write_buff(flag, &fmt);
 			reset_flag(flag);
 		}
 	}

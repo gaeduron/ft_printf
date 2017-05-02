@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 11:18:24 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/01 18:56:20 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/02 17:54:09 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int				ft_printf(const char *format, ...);
 void			print_fmt(t_flag *flag, const char *fmt);
 void			init_flag(t_flag *flag);
 void			reset_flag(t_flag *flag);
-void			write_buff(t_flag *flag, const char *fmt);
-void			cvt_d(va_list *app, t_flag *flag);
+void			write_buff(t_flag *flag, const char **fmt);
+void			cvt_d(va_list *app, t_flag *fleag);
 void			write_d(char *p, int len, t_flag *flag);
-
+void			get_flags(t_flag *flag, const char **fmt);
 
 #endif

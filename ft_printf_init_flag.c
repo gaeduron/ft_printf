@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 15:12:27 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/01 18:47:39 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/02 18:39:25 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ void	reset_flag(t_flag *flag)
 
 void	init_flag(t_flag *flag)
 {
+	reset_flag(flag);
 	flag->cvt['d'] = &cvt_d;
 }

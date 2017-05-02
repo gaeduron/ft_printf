@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 17:25:53 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/02 15:43:56 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/02 18:05:25 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,11 @@ void	cvt_d(va_list *app, t_flag *flag)
 	write_d(p, (buf + sizeof buf) - p, flag);
 }
 
-void	write_buff(t_flag *flag, const char *fmt)
+void	write_buff(t_flag *flag, const char **fmt)
 {
-	(flag->cvt[*fmt])(&(flag->ap), flag);
+	if (flag->cvt[**fmt])
+	{
+		(flag->cvt[**fmt])(&(flag->ap), flag);
+		(*fmt)++;
+	}
 }

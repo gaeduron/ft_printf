@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 13:54:03 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/02 15:48:08 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/02 19:09:16 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int		main()
 {
-	ft_printf("nbr = %d nbr2 = %d\n", (42 + 42), 'd');
-//    ft_printf(" = %d" , ft_printf(" = %d" , ft_printf("coucou\n")));
+	ft_printf("nbr = %+- #010.5llhhd nbr2 = %54.7d\n", (42 + 42), 'd');
+//    printf(" = %s" , "124111");
 	return (0);
 }
