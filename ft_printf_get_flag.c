@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 15:58:43 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/02 19:09:01 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/02 19:45:09 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ int	is_flag(char c)
 	while (*all)
 	{
 		if (*all++ == c)
-		{
-		//	printf("flag: |%c|\n", c);
 			return (1);
-		}
 	}
 	return (0);
 }
@@ -45,11 +42,11 @@ void	get_flags(t_flag *flag, const char **fmt)
 		}
 		(*fmt)++;
 	}
-	while (i < 256)
-	{
-		if (flag->flag[i])
-			printf("flag: |%c|\n", i);
-		i++;
-	}
-	printf("space = %d && precision = %d\n", flag->space, flag->precision);
+//	while (i < 256)
+//	{
+//		if (flag->flag[i])
+//			printf("flag: |%c|\n", i);
+//		i++;
+//	}
+//	printf("space = %d && precision = %d\n", flag->space, flag->precision);
 }

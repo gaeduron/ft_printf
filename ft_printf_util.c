@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf_util.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/27 13:54:03 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/02 20:22:54 by gduron           ###   ########.fr       */
+/*   Created: 2017/05/02 20:27:55 by gduron            #+#    #+#             */
+/*   Updated: 2017/05/02 20:31:57 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libftprintf.h"
 
-int		main()
+void	add_to_buff(t_flag *flag, char c)
 {
-	ft_printf("nbr = %--10d nbr2 = %54.7d\n", (42 + 42), 'd');
-	printf(" = %10f" , 124.);
-	return (0);
+	if (flag->i == BUFFSIZE)
+	{
+	    write(1, flag->buff, flag->i);
+	    flag->i = 0;
+	}
+	flag->buff[flag->i] = c;
+	flag->i++;
 }

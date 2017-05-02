@@ -6,18 +6,21 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 17:25:53 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/02 18:05:25 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/02 20:46:56 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-
+::
 void	write_d(char *p, int len, t_flag *flag)
 {
-	if (flag->i + len >= BUFFSIZE)
+	if (flag->flag['-'])
 	{
-		write(1, flag->buff, flag->i);
-		flag->i = 0;
+		
+	}
+	else
+	{
+		
 	}
 	while (len--)
 		flag->buff[flag->i++] = *p++;
