@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 17:25:53 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/05 13:47:28 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/05 16:28:04 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ void	write_d(char *p, int len, t_flag *flag)
 	}
 	else
 	{
-		if (*p == '-' && flag->flag['0'] && len-- && !(flag->flag['+'] = 0)
-				&& !(flag->flag[' '] = 0))
+//		printf("%s = c\n", p);
+		if (*p == '-' && (flag->flag['0'] || flag->precision)
+			   	&& len-- && !(flag->flag['+'] = 0) && !(flag->flag[' '] = 0))
 			add_to_buff(flag, *p++);
 		while (!flag->flag['0'] && (flag->space - 
 				(flag->precision - len > 0 ? flag->precision : len) -
@@ -36,9 +37,14 @@ void	write_d(char *p, int len, t_flag *flag)
 			add_to_buff(flag, ' ');
 		if ((flag->flag['+'] || flag->flag[' ']) && ft_isdigit(*p))
 			flag->flag['+'] ? add_to_buff(flag, '+') : add_to_buff(flag, ' ');
-//		printf("len = %d | space = %d | pre = %d\n", len, flag->space, flag->precision);
-		while (((flag->precision--) - len > 0) || ((flag->space) - len > 0))
-			add_to_buff(flag, '0');
+		while (((flag->precision) - len > 0) || ((flag->space) - len > 0))
+		{
+			if ((flag->space) <= (flag->precision))
+				(flag->precision--) ? add_to_buff(flag, '0') : 0;
+			else
+				(flag->flag['0'] && !flag->precision) ? 
+					add_to_buff(flag, '0') : add_to_buff(flag, ' ');
+		}
 		while (*p)
 			add_to_buff(flag, *p++);
 	}
