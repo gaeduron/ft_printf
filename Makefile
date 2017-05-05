@@ -78,8 +78,15 @@ ft_lst_at.c \
 ft_lst_size.c \
 ft_sqrt.c \
 ft_pow.c \
+\
+ft_printf.c \
+ft_printf_format.c \
+ft_printf_get_flag.c \
+ft_printf_init_flag.c \
+ft_printf_util.c \
+ft_printf_write_buff.c
 
-CC = -Wall -Werror -Wextra
+CC = -Wall -Werror -Wextra #-g -fsanitize=address
 
 OBJ = $(SRC:.c=.o)
 
@@ -102,5 +109,9 @@ clean:
 fclean: clean
 	@echo "Deleting:\033[33m $(NAME)\033[0m"
 	@rm -f $(NAME)
+
+t: all
+	@gcc libftprintf.a main.c -I includes -g -fsanitize=address
+	@echo "Compilation (main):\033[92m OK\033[0m"
 
 re: fclean all

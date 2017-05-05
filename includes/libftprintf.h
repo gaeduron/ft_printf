@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 11:18:24 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/02 20:32:17 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/03 18:08:47 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "libft.h"
 # include <stdarg.h>
-
+# include <stdio.h>
 # define BUFFSIZE 4096
 
 typedef struct s_flag t_flag;
