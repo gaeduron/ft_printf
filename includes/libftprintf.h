@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 11:18:24 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/03 18:08:47 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/08 18:06:19 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct	s_flag
 {
 	char		flag[256];
 	char		buff[BUFFSIZE];
+	int			code;
 	int			i;
 	int			space;
 	int			precision;
@@ -35,13 +36,26 @@ typedef struct	s_flag
 }				t_flag;
 
 int				ft_printf(const char *format, ...);
-void			print_fmt(t_flag *flag, const char *fmt);
+void			fmt_print(t_flag *flag, const char *fmt);
 void			init_flag(t_flag *flag);
 void			reset_flag(t_flag *flag);
-void			write_buff(t_flag *flag, const char **fmt);
-void			cvt_d(va_list *app, t_flag *fleag);
-void			write_d(char *p, int len, t_flag *flag);
 void			get_flags(t_flag *flag, const char **fmt);
 void			add_to_buff(t_flag *flag, char c);
+
+void			ft_printf_cvt_d(va_list *app, t_flag *flag);
+void            ft_printf_cvt_ld(va_list *app, t_flag *flag);
+void            ft_printf_cvt_o(va_list *app, t_flag *flag);
+void            ft_printf_cvt_lo(va_list *app, t_flag *flag);
+void            ft_printf_cvt_u(va_list *app, t_flag *flag);
+void            ft_printf_cvt_lu(va_list *app, t_flag *flag);
+void            ft_printf_cvt_x(va_list *app, t_flag *flag);
+void            ft_printf_cvt_c(va_list *app, t_flag *flag);
+void            ft_printf_cvt_lc(va_list *app, t_flag *flag);
+void            ft_printf_cvt_p(va_list *app, t_flag *flag);
+void            ft_printf_cvt_s(va_list *app, t_flag *flag);
+void            ft_printf_cvt_ls(va_list *app, t_flag *flag);
+
+void            ft_printf_putd(char *p, int len, t_flag *flag);
+void            ft_printf_puts(char *p, int len, t_flag *flag);
 
 #endif

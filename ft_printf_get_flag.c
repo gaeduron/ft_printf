@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 15:58:43 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/03 14:09:16 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/08 17:29:59 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,6 @@ void	get_flags(t_flag *flag, const char **fmt)
 		}
 		(*fmt)++;
 	}
+	flag->cvt[(int)**fmt] ? (flag->code = **fmt) : 0;
+	(*fmt)++;
 }

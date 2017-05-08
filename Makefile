@@ -80,11 +80,26 @@ ft_sqrt.c \
 ft_pow.c \
 \
 ft_printf.c \
-ft_printf_format.c \
+ft_printf_format_and_print.c \
 ft_printf_get_flag.c \
 ft_printf_init_flag.c \
+\
+ft_printf_put_d.c \
+\
+ft_printf_cvt_d.c \
+#ft_printf_cvt_ld.c \
+ft_printf_cvt_o.c \
+ft_printf_cvt_lo.c \
+ft_printf_cvt_u.c \
+ft_printf_cvt_lu.c \
+ft_printf_cvt_x.c \
+ft_printf_cvt_c.c \
+ft_printf_cvt_lc.c \
+ft_printf_cvt_p.c \
+ft_printf_cvt_s.c \
+ft_printf_cvt_ls.c \
+ft_printf_put_s.c \
 ft_printf_util.c \
-ft_printf_write_buff.c
 
 CC = -Wall -Werror -Wextra #-g -fsanitize=address
 

@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_format.c                                 :+:      :+:    :+:   */
+/*   ft_printf_cvt_d.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/01 13:38:42 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/03 18:10:07 by gduron           ###   ########.fr       */
+/*   Created: 2017/05/08 18:18:13 by gduron            #+#    #+#             */
+/*   Updated: 2017/05/08 18:18:48 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	print_fmt(t_flag *flag, const char *fmt)
+void    ft_printf_cvt_d(va_list *app, t_flag *flag)
 {
-	init_flag(flag);
-	while (*fmt)
+	int     nbr;
+	char    buf[44];
+	char    *p;
+	long    m;
+
+	p = buf + sizeof(buf);
+	*p = 0;
+	nbr = va_arg(*app, int);
+	if (nbr < 0)
+		m = -(long)nbr;
+	else
+		m = nbr;
+	if (m == 0)
+		*--p = '0';
+	while (m)
 	{
-		if (flag->i == BUFFSIZE)
-		{
-			write(1, flag->buff, BUFFSIZE);
-			flag->i = 0;
-		}
-		if (*fmt != '%' || *(++fmt) == '%')
-		{
-			flag->buff[flag->i++] = *fmt++;
-			flag->printed_char++;
-		}
-		else
-		{
-			reset_flag(flag);
-			get_flags(flag, &fmt);
-			write_buff(flag, &fmt);
-		}
+		*--p = m % 10 + '0';
+		m /= 10;
 	}
-	write(1, flag->buff, flag->i);
-	flag->i = 0;
+	if (nbr < 0)
+		*--p = '-';
+	ft_printf_putd(p, (buf + sizeof buf) - p, flag);
 }
