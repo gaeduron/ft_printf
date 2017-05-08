@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 15:12:27 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/08 17:38:01 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/08 18:41:00 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,28 @@ void	reset_flag(t_flag *flag)
 	flag->code = 0;
 }
 
+void	init_cvt(t_flag *flag)
+{
+	flag->cvt['d'] = &ft_printf_cvt_d;
+/*	flag->cvt['D'] = &ft_printf_cvt_ld;
+	flag->cvt['o'] = &ft_printf_cvt_o;
+	flag->cvt['O'] = &ft_printf_cvt_lo;
+	flag->cvt['u'] = &ft_printf_cvt_u;
+	flag->cvt['U'] = &ft_printf_cvt_lu;
+	flag->cvt['x'] = &ft_printf_cvt_x;
+	flag->cvt['X'] = &ft_printf_cvt_x;
+	flag->cvt['c'] = &ft_printf_cvt_c;
+	flag->cvt['C'] = &ft_printf_cvt_lc;
+	flag->cvt['p'] = &ft_printf_cvt_p;
+	flag->cvt['s'] = &ft_printf_cvt_s;
+	flag->cvt['S'] = &ft_printf_cvt_ls;*/
+}
+
 void	init_flag(t_flag *flag)
 {
 	ft_memset(flag->cvt, 0, sizeof(flag->cvt));
 	reset_flag(flag);
-	flag->cvt['d'] = &ft_printf_cvt_d;
+	init_cvt(flag);
 	flag->i = 0;
 	flag->printed_char = 0;
 }
