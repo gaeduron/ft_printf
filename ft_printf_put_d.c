@@ -6,12 +6,12 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:19:14 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/11 11:58:50 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/11 16:07:17 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-
+/*
 void    ft_printf_putd(char *p, int len, t_flag *flag)
 {
 	if (flag->flag['-'])
@@ -50,32 +50,52 @@ void    ft_printf_putd(char *p, int len, t_flag *flag)
 			add_to_buff(flag, *p++);
 	}
 }
+*/
+void	ft_put_space(int call, int s_len, int len, t_flag *flag)
+{
+	if (call == 1)
+	{
+		while (!flag->flag['-'] && flag->space > 
+				(flag->precision > len ? flag->precision : len) + s_len)
+			add_to_buff(flag, ' ');
+	}
+	if (call == 2)
+	{
+		while (flag->flag['-'] && flag->space > 0)
+			add_to_buff(flag, ' ');
+	}
+}
 
 void	ft_put_sign(t_flag *flag)
 {
 	if (flag->flag['#'])
 	{
-		add_to_buff(flag, '0'): 0;
-		flag->id == 'x' ? add_to_buff(flag, 'x'): 0;
-		flag->id == 'X' ? add_to_buff(flag, 'X'): 0;
+		add_to_buff(flag, '0');
+		flag->id == 'x' ? add_to_buff(flag, 'x') : 0;
+		flag->id == 'X' ? add_to_buff(flag, 'X') : 0;
 	}
-	flag->flag[' '] ? add_to_buff(flag, ' '): 0;
-	flag->flag['+'] == 1 ? add_to_buff(flag, '+'): 0;
-	flag->flag['+'] == 2 ? add_to_buff(flag, '-'): 0;
+	flag->flag[' '] ? add_to_buff(flag, ' ') : 0;
+	flag->flag['+'] == 1 ? add_to_buff(flag, '+') : 0;
+	flag->flag['+'] == 2 ? add_to_buff(flag, '-') : 0;
 }
 
-void	ft_put_precision_or_0(t_flag *flag)
+void	ft_put_precision_or_0(t_flag *flag, int len)
 {
-	while (flag->precision-- > len)	
+	while (flag->precision-- > len)
+		add_to_buff(flag, '0');	
 }
 
-void	ft_putd()
+void	ft_put_value(t_flag *flag, char *p)
 {
-	while (!flag->flag['-'] && need_space)
-		add_to_buff(flag, ' ');
+	while (*p)
+		add_to_buff(flag, *p++);
+}
+
+void	ft_printf_putd(char *p, int len, t_flag *flag, int s_len)
+{
+	ft_put_space(1, s_len, len, flag);
 	ft_put_sign(flag);
-	ft_put_precision_or_0();
-	ft_put_value();
-	while (flag->flag['-'] && flag->space > 0)
-		add_to_buff(flag, ' ');
+	ft_put_precision_or_0(flag, len);
+	ft_put_value(flag, p);
+	ft_put_space(2, s_len, len, flag);
 }

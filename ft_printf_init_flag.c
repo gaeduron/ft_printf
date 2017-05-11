@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 15:12:27 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/08 18:41:00 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/11 12:50:38 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	reset_flag(t_flag *flag)
 {
 	ft_memset(flag->flag, 0, 256);
 	flag->space = 0;
-	flag->precision = 0;
-	flag->code = 0;
+	flag->precision = -1;
+	flag->id = 0;
 }
 
 void	init_cvt(t_flag *flag)

@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:28:01 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/08 18:28:18 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/11 12:27:37 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	fmt_print(t_flag *flag, const char *fmt)
 		{
 			reset_flag(flag);
 			get_flags(flag, &fmt);
-			if (flag->cvt[flag->code])
-				(flag->cvt[flag->code])(&(flag->ap), flag);
+			if (flag->cvt[flag->id])
+				(flag->cvt[flag->id])(&(flag->ap), flag);
 			else
 				fmt--;
 		}

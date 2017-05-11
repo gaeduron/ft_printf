@@ -83,6 +83,7 @@ ft_printf.c \
 ft_printf_format_and_print.c \
 ft_printf_get_flag.c \
 ft_printf_init_flag.c \
+ft_printf_get_arg.c\
 \
 ft_printf_put_d.c \
 \

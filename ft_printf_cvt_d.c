@@ -6,27 +6,58 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:18:13 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/11 11:54:05 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/11 17:03:04 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-/*
-void	resolve_flag_conflic(t_flag *flag)
+
+char    *cvt_d(long long nbr, char *buf)
 {
-	if (flag->id != 'o' && flag->id != 'X' && flag->id != 'x')
-		flag->flag['#'] = 0;
-	if (flag->precision && 
-		(flag->id != 'o' && flag->id != 'X' && flag->id != 'x'
-			flag->id != 'u' && flag->id != 'd' && flag->id != 'i'))
-		flag->flag['0'] = 0;
-	flag->flag['-'] ? flag->flag['0'] = 0 : 0;
-	flag->flag['+'] ? flag->flag[' '] = 0 : 0;
-	flag->id != 'd' && flag->id != 'i' ? flag->flag[' '] = 0 : 0;
-	flag->id != 'd' && flag->id != 'i' ? flag->flag['+'] = 0 : 0;
+	char				*p;
+	unsigned long long	m;
+
+	p = buf + 44;
+	*p = 0;
+	if (nbr < 0)
+		m = (unsigned long long)nbr;
+	else
+		m = nbr;
+	if (m == 0)
+		*--p = '0';
+	while (m)
+	{
+		*--p = m % 10 + '0';
+		m /= 10;
+	}
+	return (p);
 }
-*/
+
 void    ft_printf_cvt_d(va_list *app, t_flag *flag)
+{
+	long long		nbr;
+	char			buf[44];
+	char			*p;
+	int				s_len;
+
+	s_len = 0;
+	nbr = 0;
+	nbr = ft_printf_get_arg(app, flag);
+	p = cvt_d(nbr, buf);
+	if (nbr <= 4294967295)
+	{
+		(int)nbr < 0 ? flag->flag['+'] = 2 : 0;
+		(int)nbr < 0 ? flag->flag[' '] = 0 : 0;
+	}
+	else
+	{
+		nbr < 0 ? flag->flag['+'] = 2 : 0;
+		nbr < 0 ? flag->flag[' '] = 0 : 0;
+	}
+	flag->flag['+'] || flag->flag[' '] ? s_len = 1: 0;
+	ft_printf_putd(p, (buf + sizeof buf) - p, flag, s_len);
+}
+/*void    ft_printf_cvt_d(va_list *app, t_flag *flag)
 {
 	int     nbr;
 	char    buf[44];
@@ -50,4 +81,4 @@ void    ft_printf_cvt_d(va_list *app, t_flag *flag)
 	if (nbr < 0)
 		*--p = '-';
 	ft_printf_putd(p, (buf + sizeof buf) - p, flag);
-}
+}*/

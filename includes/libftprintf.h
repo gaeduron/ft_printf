@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 11:18:24 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/08 18:06:19 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/11 15:18:17 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct	s_flag
 {
 	char		flag[256];
 	char		buff[BUFFSIZE];
-	int			code;
+	int			id;
 	int			i;
 	int			space;
 	int			precision;
@@ -41,6 +41,7 @@ void			init_flag(t_flag *flag);
 void			reset_flag(t_flag *flag);
 void			get_flags(t_flag *flag, const char **fmt);
 void			add_to_buff(t_flag *flag, char c);
+long long		ft_printf_get_arg(va_list *app, t_flag *flag);
 
 void			ft_printf_cvt_d(va_list *app, t_flag *flag);
 void            ft_printf_cvt_ld(va_list *app, t_flag *flag);
@@ -55,7 +56,7 @@ void            ft_printf_cvt_p(va_list *app, t_flag *flag);
 void            ft_printf_cvt_s(va_list *app, t_flag *flag);
 void            ft_printf_cvt_ls(va_list *app, t_flag *flag);
 
-void            ft_printf_putd(char *p, int len, t_flag *flag);
+void			ft_printf_putd(char *p, int len, t_flag *flag, int s_len);
 void            ft_printf_puts(char *p, int len, t_flag *flag);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 13:54:03 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/11 11:58:09 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/11 16:36:43 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int		main()
 //	ft_printf("10 == %5d\n", 10);
 //	int a = -1;
 //	long b = (long)a;
-	printf("==> %010.6d\n", 42);
-//	printf("%ld\n", b);
+	printf("   ==> %+06.5d\n", INT_MIN);
+	ft_printf("ft ==> %+06.5d\n", INT_MIN);
 //	printf("%d", 2147483648);
 	//printf("% d nbr = %   d %% nbr2 = %+-54d\n", 42, 42, 'd');
 	return (0);
