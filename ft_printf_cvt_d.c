@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:18:13 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/12 15:55:38 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/12 16:12:44 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void    ft_printf_cvt_d(va_list *app, t_flag *flag)
 		nbr < 0 ? flag->flag[' '] = 0 : 0;
 	}
 	flag->flag['+'] || flag->flag[' '] ? s_len = 1: 0;
+	flag->precision == 0 && *p == '0' ? p = (buf + sizeof buf) : 0;
 	ft_printf_putd(p, (buf + sizeof buf) - p, flag, s_len);
 }
 /*void    ft_printf_cvt_d(va_list *app, t_flag *flag)
