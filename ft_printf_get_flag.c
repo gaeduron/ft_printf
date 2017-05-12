@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 15:58:43 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/12 16:03:57 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/12 17:46:48 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,21 @@ void    resolve_flag_conflic(t_flag *flag)
 		flag->flag['#'] = 0;
 	if (flag->precision >= 0 || 
 			(flag->id != 'o' && flag->id != 'X' && flag->id != 'x' && 
-			flag->id != 'u' && flag->id != 'd' && flag->id != 'i'))
+			 flag->id != 'u' && flag->id != 'd' && flag->id != 'i'))
 		flag->flag['0'] = 0;
 	flag->flag['-'] ? flag->flag['0'] = 0 : 0;
 	flag->flag['+'] ? flag->flag[' '] = 0 : 0;
 	flag->id != 'd' && flag->id != 'i' ? flag->flag[' '] = 0 : 0;
 	flag->id != 'd' && flag->id != 'i' ? flag->flag['+'] = 0 : 0;
-//	if (flag->precision == -1 && flag->flag['0'])
-//		flag->precision = flag->space;
+}
+
+void	maj_or_lmin(char fmt, t_flag *flag)
+{
+	fmt <= 'Z' && fmt >= 'A' ? flag->flag['l'] += 2 : 0;
+	flag->flag['l'] > 1 ? flag->flag['L'] = 1: 0;
+	flag->flag['l'] > 1 ? flag->flag['l'] = 0: 0;
+	fmt = fmt <= 'Z' && fmt >= 'A' ? fmt + ('a' - 'A') : fmt;
+	flag->cvt[(int)fmt] ? (flag->id = fmt) : 0;
 }
 
 void	get_flags(t_flag *flag, const char **fmt)
@@ -61,7 +68,7 @@ void	get_flags(t_flag *flag, const char **fmt)
 		}
 		(*fmt)++;
 	}
-	flag->cvt[(int)**fmt] ? (flag->id = **fmt) : 0;
+	maj_or_lmin(**fmt, flag);
 	(*fmt)++;
 	resolve_flag_conflic(flag);
 }

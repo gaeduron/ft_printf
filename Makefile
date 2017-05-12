@@ -6,7 +6,7 @@
 #    By: gduron <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/19 20:14:23 by gduron            #+#    #+#              #
-#*   Updated: 2017/04/04 02:21:32 by bduron           ###   ########.fr       *#
+#    Updated: 2017/05/12 17:15:19 by gduron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,11 +88,10 @@ ft_printf_get_arg.c\
 ft_printf_put_d.c \
 \
 ft_printf_cvt_d.c \
-#ft_printf_cvt_ld.c \
-ft_printf_cvt_o.c \
-ft_printf_cvt_lo.c \
+ft_printf_cvt_pourcent.c \
 ft_printf_cvt_u.c \
-ft_printf_cvt_lu.c \
+#ft_printf_cvt_o.c \
+ft_printf_cvt_lo.c \
 ft_printf_cvt_x.c \
 ft_printf_cvt_c.c \
 ft_printf_cvt_lc.c \

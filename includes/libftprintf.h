@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 11:18:24 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/11 15:18:17 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/12 17:03:37 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void			add_to_buff(t_flag *flag, char c);
 long long		ft_printf_get_arg(va_list *app, t_flag *flag);
 
 void			ft_printf_cvt_d(va_list *app, t_flag *flag);
-void            ft_printf_cvt_ld(va_list *app, t_flag *flag);
 void            ft_printf_cvt_o(va_list *app, t_flag *flag);
 void            ft_printf_cvt_lo(va_list *app, t_flag *flag);
 void            ft_printf_cvt_u(va_list *app, t_flag *flag);
@@ -55,6 +54,7 @@ void            ft_printf_cvt_lc(va_list *app, t_flag *flag);
 void            ft_printf_cvt_p(va_list *app, t_flag *flag);
 void            ft_printf_cvt_s(va_list *app, t_flag *flag);
 void            ft_printf_cvt_ls(va_list *app, t_flag *flag);
+void			ft_printf_cvt_pourcent(va_list *app, t_flag *flag);
 
 void			ft_printf_putd(char *p, int len, t_flag *flag, int s_len);
 void            ft_printf_puts(char *p, int len, t_flag *flag);
