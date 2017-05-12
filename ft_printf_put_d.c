@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:19:14 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/12 18:11:12 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/12 19:17:39 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	ft_put_space(int call, int s_len, int len, t_flag *flag)
 	}
 }
 
-void	ft_put_sign(t_flag *flag)
+void	ft_put_sign(t_flag *flag, int s_len)
 {
-	if (flag->flag['#'])
+	if (flag->flag['#'] && s_len)
 	{
 		add_to_buff(flag, '0');
 		flag->id == 'x' ? add_to_buff(flag, 'x') : 0;
@@ -57,7 +57,7 @@ void	ft_put_value(t_flag *flag, char *p)
 void	ft_printf_putd(char *p, int len, t_flag *flag, int s_len)
 {
 	ft_put_space(1, s_len, len, flag);
-	ft_put_sign(flag);
+	ft_put_sign(flag, s_len);
 	ft_put_precision_or_0(flag, len);
 	ft_put_value(flag, p);
 	ft_put_space(2, s_len, len, flag);

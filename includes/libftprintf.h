@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 11:18:24 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/12 17:03:37 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/12 18:43:51 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,7 @@ long long		ft_printf_get_arg(va_list *app, t_flag *flag);
 
 void			ft_printf_cvt_d(va_list *app, t_flag *flag);
 void            ft_printf_cvt_o(va_list *app, t_flag *flag);
-void            ft_printf_cvt_lo(va_list *app, t_flag *flag);
 void            ft_printf_cvt_u(va_list *app, t_flag *flag);
-void            ft_printf_cvt_lu(va_list *app, t_flag *flag);
 void            ft_printf_cvt_x(va_list *app, t_flag *flag);
 void            ft_printf_cvt_c(va_list *app, t_flag *flag);
 void            ft_printf_cvt_lc(va_list *app, t_flag *flag);
