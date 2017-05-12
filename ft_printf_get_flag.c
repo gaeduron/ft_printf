@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 15:58:43 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/11 16:03:40 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/12 13:44:11 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void    resolve_flag_conflic(t_flag *flag)
 	flag->flag['+'] ? flag->flag[' '] = 0 : 0;
 	flag->id != 'd' && flag->id != 'i' ? flag->flag[' '] = 0 : 0;
 	flag->id != 'd' && flag->id != 'i' ? flag->flag['+'] = 0 : 0;
-	if (flag->precision == -1 && flag->flag['0'])
-		flag->precision = flag->space;
+//	if (flag->precision == -1 && flag->flag['0'])
+//		flag->precision = flag->space;
 }
 
 void	get_flags(t_flag *flag, const char **fmt)
