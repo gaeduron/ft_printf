@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:19:14 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/12 16:08:56 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/12 18:11:12 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_put_space(int call, int s_len, int len, t_flag *flag)
 {
 	if (call == 1)
 	{
-		while (!flag->flag['-'] && !flag->flag['0']&& flag->space > 
+		while (!flag->flag['-'] && !flag->flag['0'] && flag->space > 
 				(flag->precision > len ? flag->precision : len) + s_len)
 			add_to_buff(flag, ' ');
 	}
