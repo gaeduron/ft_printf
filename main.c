@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 13:54:03 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/15 12:07:29 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/15 16:51:08 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,8 @@
 
 int		main()
 {
-	printf("%s\n", "abc");
-	ft_printf("%s\n", "this is a string");
-	ft_printf("%s \n", "this is a string");    
-	ft_printf("%s  \n", "this is a string");   
-	ft_printf("this is a %s\n", "string");     
-	ft_printf("%s is a string\n", "this");     
-	ft_printf("Line Feed %s\n", "\n");         
-	ft_printf("%10s is a string\n", "this");   
-	ft_printf("%.2s is a string\n", "this");   
-	ft_printf("%5.2s is a string\n", "this");  
-	ft_printf("%10s is a string\n", "");       
-	ft_printf("%.2s is a string\n", "");       
-	ft_printf("%5.2s is a string\n", "");      
-	ft_printf("%-10s is a string\n", "this");  
-	ft_printf("%-.2s is a string\n", "this");  
-	ft_printf("%-5.2s is a string\n", "this"); 
-	ft_printf("%-10s is a string\n", "");      
-	ft_printf("%-.2s is a string\n", "");      
-	ft_printf("%-5.2s is a string\n", "");     
-	ft_printf("%s %s\n", "this", "is");        
-	ft_printf("%s %s %s\n", "this", "is", "a");
-	ft_printf("%s %s %s %s\n", "this", "is", "a", "multi");
-	ft_printf("%s %s %s %s string. gg!\n", "this", "is", "a", "multi", "string");
-	ft_printf("%s%s%s%s%s\n", "this", "is", "a", "multi", "string");
-	ft_printf("@moulitest: %s\n", NULL);
-	ft_printf("%s %s\n", NULL, "string");
+	ft_printf("%2c", 0);
+	printf("%2c", 0);
 	return (0);
 }
 /*

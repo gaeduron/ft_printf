@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 15:12:27 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/15 11:34:44 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/15 18:04:31 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,17 @@
 
 void	reset_flag(t_flag *flag)
 {
-	ft_memset(flag->flag, 0, 256);
+	flag->flag['l'] = 0;
+	flag->flag['L'] = 0;
+	flag->flag['h'] = 0;
+	flag->flag['H'] = 0;
+	flag->flag['z'] = 0;
+	flag->flag['j'] = 0;
+	flag->flag['+'] = 0;
+	flag->flag['-'] = 0;
+	flag->flag[' '] = 0;
+	flag->flag['.'] = 0;
+	flag->flag['#'] = 0;
 	flag->space = 0;
 	flag->precision = -1;
 	flag->id = 0;
@@ -48,9 +58,6 @@ void	init_cvt(t_flag *flag)
 
 void	init_flag(t_flag *flag)
 {
-	ft_memset(flag->cvt, 0, sizeof(flag->cvt));
-	reset_flag(flag);
+	flag->init++;
 	init_cvt(flag);
-	flag->i = 0;
-	flag->printed_char = 0;
 }

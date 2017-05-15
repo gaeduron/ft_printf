@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 11:16:27 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/08 18:06:48 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/15 17:44:45 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_printf(const char *format, ...)
 {
-	t_flag flag;
+	static t_flag flag;
 
 	flag.printed_char = 0;
 	va_start(flag.ap, format);

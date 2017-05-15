@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 11:18:24 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/15 11:15:10 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/15 17:44:08 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft.h"
 # include <stdarg.h>
 # include <stdio.h>
-# define BUFFSIZE 4096
+# define BUFFSIZE 3477594
 
 typedef struct s_flag t_flag;
 
@@ -24,13 +24,14 @@ typedef void (*f)(va_list *app, struct s_flag *flag);
 
 typedef struct	s_flag
 {
-	char		flag[256];
+	char		flag[128];
 	char		buff[BUFFSIZE];
 	int			id;
 	int			i;
+	int			init;
 	int			space;
 	int			precision;
-	f			cvt[256];
+	f			cvt[128];
 	va_list		ap;
 	long long	printed_char;
 }				t_flag;

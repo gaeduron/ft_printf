@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:18:13 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/12 19:17:43 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/15 18:33:29 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ char    *cvt_x(unsigned long long nbr, char *buf)
 	{
 		*--p = nbr % 16 > 9 ? nbr % 16 + 'a' - 10 : nbr % 16 + '0';
 		nbr /= 16;
-
 	}
 	return (p);
 }
@@ -41,7 +40,6 @@ char    *cvt_lx(unsigned long long nbr, char *buf)
 	{
 		*--p = nbr % 16 > 9 ? nbr % 16 + 'A' - 10 : nbr % 16 + '0';
 		nbr /= 16;
-
 	}
 	return (p);
 }
@@ -60,7 +58,7 @@ void    ft_printf_cvt_x(va_list *app, t_flag *flag)
 			flag->flag['j']) ? nbr : (unsigned int)nbr;
 	if (flag->id == 'x')
 		p = cvt_x(nbr > 0 ? nbr : -nbr, buf);
-	if (flag->id == 'X')
+	else
 		p = cvt_lx(nbr > 0 ? nbr : -nbr, buf);
 	s_len = flag->flag['#'] ? 2 : 0;
 	s_len = *p == '0' ? 0 : s_len;
