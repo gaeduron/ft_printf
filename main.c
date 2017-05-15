@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 13:54:03 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/12 20:03:42 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/15 12:07:29 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int		main()
 {
-	ft_printf("%s\n", "abc"); 
+	printf("%s\n", "abc");
 	ft_printf("%s\n", "this is a string");
 	ft_printf("%s \n", "this is a string");    
 	ft_printf("%s  \n", "this is a string");   

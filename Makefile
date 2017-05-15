@@ -6,7 +6,7 @@
 #    By: gduron <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/19 20:14:23 by gduron            #+#    #+#              #
-#    Updated: 2017/05/12 19:27:00 by gduron           ###   ########.fr        #
+#    Updated: 2017/05/15 11:35:36 by gduron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,11 +93,11 @@ ft_printf_cvt_u.c \
 ft_printf_cvt_o.c \
 ft_printf_cvt_x.c \
 ft_printf_cvt_c.c \
+ft_printf_cvt_s.c \
+ft_printf_put_s.c \
 #ft_printf_cvt_lc.c \
 ft_printf_cvt_p.c \
-ft_printf_cvt_s.c \
 ft_printf_cvt_ls.c \
-ft_printf_put_s.c \
 ft_printf_util.c \
 
 CC = -Wall -Werror -Wextra #-g -fsanitize=address
