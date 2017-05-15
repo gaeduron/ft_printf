@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 15:12:27 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/15 18:04:31 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/15 19:54:31 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	reset_flag(t_flag *flag)
 void	init_cvt(t_flag *flag)
 {
 	flag->cvt['d'] = &ft_printf_cvt_d;
+	flag->cvt['i'] = &ft_printf_cvt_d;
 	flag->cvt['%'] = &ft_printf_cvt_pourcent;
 	flag->cvt['u'] = &ft_printf_cvt_u;
 	flag->cvt['U'] = &ft_printf_cvt_u;
@@ -42,6 +43,7 @@ void	init_cvt(t_flag *flag)
 	flag->cvt['X'] = &ft_printf_cvt_x;
 	flag->cvt['c'] = &ft_printf_cvt_c;
 	flag->cvt['s'] = &ft_printf_cvt_s;
+	flag->cvt['p'] = &ft_printf_cvt_x;
 /*	flag->cvt['D'] = &ft_printf_cvt_ld;
 	flag->cvt['o'] = &ft_printf_cvt_o;
 	flag->cvt['O'] = &ft_printf_cvt_lo;
