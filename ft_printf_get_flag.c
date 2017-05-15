@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 15:58:43 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/15 18:10:43 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/15 18:39:03 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	get_flags(t_flag *flag, const char **fmt)
 			flag->flag[(int)**fmt] = 1;
 		if (**fmt == '.' || ft_isdigit(**fmt))
 		{
-			**fmt == '.' ? (flag->precision = atoi(*fmt + 1)) : 
+			**fmt == '.' ? (flag->precision = ft_atoi(*fmt + 1)) : 
 				(flag->space = ft_atoi(*fmt));
 			while (ft_isdigit(*(*fmt + 1)))
 				(*fmt)++;
