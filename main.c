@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 13:54:03 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/19 18:32:30 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/19 20:06:44 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ int		main()
 	printf("%S || %s\n", L"∑", ("∑"));
 */
 //	printf("%lC\n\n=>put_wchar: ", L'™');
-	ft_printf("printing 'U+1F60E' => %C\n", 'c');
+	ft_printf("printing 'U+1F60E' => %#.o\n", 42);
 //	put_wchar(0);
 //	printf("  \n");
 

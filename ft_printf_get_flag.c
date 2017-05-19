@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 15:58:43 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/19 18:03:36 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/19 20:02:06 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	maj_or_lmin(char fmt, t_flag *flag)
 	fmt <= 'Z' && fmt >= 'A' && fmt != 'X' ? flag->flag['l'] += 2 : 0;
 	flag->flag['l'] > 1 ? flag->flag['L'] = 1: 0;
 	flag->flag['l'] > 1 ? flag->flag['l'] = 0: 0;
-	fmt = fmt <= 'Z' && fmt >= 'A' && fmt != 'X' && fmt != 'C' ? fmt + ('a' - 'A') : fmt;
+	fmt = fmt <= 'Z' && fmt >= 'A' && fmt != 'X' && fmt != 'C' && fmt != 'S' ? fmt + ('a' - 'A') : fmt;
 	flag->cvt[(int)fmt] ? (flag->id = fmt) : 0;
 }
 
