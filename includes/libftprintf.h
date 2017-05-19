@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 11:18:24 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/15 17:44:08 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/19 17:51:14 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ void			ft_printf_cvt_pourcent(va_list *app, t_flag *flag);
 
 void			ft_printf_putd(char *p, int len, t_flag *flag, int s_len);
 void            ft_printf_puts(char *p, int len, t_flag *flag);
+void            ft_printf_putls(wchar_t *p, int len, t_flag *flag);
 
 #endif

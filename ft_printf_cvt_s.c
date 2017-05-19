@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/15 11:02:51 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/15 12:16:16 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/19 18:20:30 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ void	ft_printf_cvt_s(va_list *app, t_flag *flag)
 		end++;
 	if (flag->precision > end - p || flag->precision < 0)
 		flag->precision = end - p;
-	p ? ft_printf_puts(p, end - p, flag) : 0;
+	p ? ft_printf_puts(p, 0, flag) : 0;
 }
