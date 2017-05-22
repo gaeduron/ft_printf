@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:28:01 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/22 14:12:31 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 17:00:14 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	fmt_print(t_flag *flag, const char *fmt)
 	void (*fun_ptr)(va_list *app, struct s_flag *flag);
 
 	flag->i = 0;
-	while (*fmt)
+	while (*fmt && flag->printed_char >= 0)
 	{
 		if (*fmt != '%' || *(++fmt) == '%')
 			add_to_buff(flag, *fmt++);
