@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_cvt_d.c                                  :+:      :+:    :+:   */
+/*   ft_printf_cvt_x.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:18:13 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/22 12:28:28 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 13:05:28 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static	char	*cvt_x(unsigned long long nbr, char *buf)
 	return (p);
 }
 
-char			*cvt_lx(unsigned long long nbr, char *buf)
+static	char	*cvt_lx(unsigned long long nbr, char *buf)
 {
 	char	*p;
 

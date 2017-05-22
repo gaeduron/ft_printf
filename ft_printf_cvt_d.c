@@ -6,13 +6,13 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:18:13 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/22 12:20:37 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 13:03:50 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-char	*cvt_d(unsigned long long nbr, char *buf)
+static	char	*cvt_d(unsigned long long nbr, char *buf)
 {
 	char	*p;
 
@@ -28,7 +28,7 @@ char	*cvt_d(unsigned long long nbr, char *buf)
 	return (p);
 }
 
-void	ft_printf_cvt_d(va_list *app, t_flag *flag)
+void			ft_printf_cvt_d(va_list *app, t_flag *flag)
 {
 	long long		nbr;
 	char			buf[44];
