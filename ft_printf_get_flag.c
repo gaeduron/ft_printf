@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 15:58:43 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/22 13:39:50 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 15:12:53 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static	void	resolve_flag_conflic(t_flag *flag)
 	flag->id == 'p' ? flag->flag['#'] = 1 : 0;
 	flag->id == 'p' ? flag->flag['L'] = 1 : 0;
 	if (flag->id != 'o' && flag->id != 'X' && flag->id != 'x'
-			&& flag->id != 'p')
+			&& flag->id != 'p' && flag->id != 'b')
 		flag->flag['#'] = 0;
 	if (flag->precision >= 0 ||
 			(flag->id != 'o' && flag->id != 'X' && flag->id != 'x' &&

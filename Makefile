@@ -6,7 +6,7 @@
 #    By: gduron <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/19 20:14:23 by gduron            #+#    #+#              #
-#    Updated: 2017/05/22 14:18:06 by gduron           ###   ########.fr        #
+#    Updated: 2017/05/22 15:30:56 by gduron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,6 +96,7 @@ ft_printf_cvt_s.c \
 ft_printf_put_s.c \
 ft_printf_cvt_lc.c \
 ft_printf_cvt_ls.c \
+ft_printf_cvt_b.c \
 
 CC = -Wall -Werror -Wextra #-g -fsanitize=address
 
@@ -120,9 +121,8 @@ clean:
 fclean: clean
 	@echo "Deleting:\033[33m $(NAME)\033[0m"
 	@rm -f $(NAME)
-
 t: all
-	@gcc libftprintf.a main_dir/main.c -I includes -g -fsanitize=address
+	@gcc libftprintf.a ../main_dir/main.c -I includes -g -fsanitize=address
 	@echo "Compilation (main):\033[92m OK\033[0m"
 
 re: fclean all

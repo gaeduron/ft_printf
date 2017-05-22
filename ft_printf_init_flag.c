@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 15:12:27 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/22 13:46:28 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 15:09:51 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ static	void	init_cvt(t_flag *flag)
 	flag->cvt['p'] = &ft_printf_cvt_x;
 	flag->cvt['C'] = &ft_printf_cvt_lc;
 	flag->cvt['S'] = &ft_printf_cvt_ls;
+	flag->cvt['b'] = &ft_printf_cvt_b;
 }
 
 void			init_flag(t_flag *flag)
