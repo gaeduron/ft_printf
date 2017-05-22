@@ -6,13 +6,13 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:19:14 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/22 12:02:20 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 12:15:30 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_put_space(int call, int s_len, int len, t_flag *flag)
+static void	ft_put_space(int call, int s_len, int len, t_flag *flag)
 {
 	if (call == 1)
 	{
@@ -27,7 +27,7 @@ void	ft_put_space(int call, int s_len, int len, t_flag *flag)
 	}
 }
 
-void	ft_put_sign(t_flag *flag, int s_len)
+static void	ft_put_sign(t_flag *flag, int s_len)
 {
 	if (flag->flag['#'] && s_len)
 	{
@@ -45,7 +45,7 @@ void	ft_put_sign(t_flag *flag, int s_len)
 	}
 }
 
-void	ft_put_precision_or_0(t_flag *flag, int len)
+static void	ft_put_precision_or_0(t_flag *flag, int len)
 {
 	if (flag->precision == -1 && flag->flag['0'])
 		flag->precision = flag->space;
@@ -53,7 +53,7 @@ void	ft_put_precision_or_0(t_flag *flag, int len)
 		add_to_buff(flag, '0');	
 }
 
-void	ft_put_value(t_flag *flag, char *p)
+static void	ft_put_value(t_flag *flag, char *p)
 {
 	if (flag->id == 'c')
 		add_to_buff(flag, *p++);

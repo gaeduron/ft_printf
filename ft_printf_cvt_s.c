@@ -6,13 +6,13 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/15 11:02:51 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/19 18:20:30 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 12:24:52 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	null_pointer_case(t_flag *flag)
+static void	null_pointer_case(t_flag *flag)
 {
 	add_to_buff(flag, '(');
 	add_to_buff(flag, 'n');
@@ -22,7 +22,7 @@ void	null_pointer_case(t_flag *flag)
 	add_to_buff(flag, ')');
 }
 
-void	ft_printf_cvt_s(va_list *app, t_flag *flag)
+void		ft_printf_cvt_s(va_list *app, t_flag *flag)
 {
 	char	*p;
 	char	*end;

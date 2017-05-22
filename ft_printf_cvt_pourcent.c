@@ -6,13 +6,13 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:18:13 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/12 17:09:29 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 12:24:06 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void    ft_printf_cvt_pourcent(va_list *app, t_flag *flag)
+void	ft_printf_cvt_pourcent(va_list *app, t_flag *flag)
 {
 	char			buf[2];
 

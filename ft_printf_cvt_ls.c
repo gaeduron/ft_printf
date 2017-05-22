@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/15 11:02:51 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/19 20:04:38 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 12:22:12 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	null_pointer_case(t_flag *flag)
 	add_to_buff(flag, ')');
 }
 
-int		wstrlen(wchar_t *p)
+static int	wstrlen(wchar_t *p)
 {
 	long	i;
 
@@ -38,7 +38,7 @@ int		wstrlen(wchar_t *p)
 	return (i);
 }
 
-void	ft_printf_cvt_ls(va_list *app, t_flag *flag)
+void		ft_printf_cvt_ls(va_list *app, t_flag *flag)
 {
 	wchar_t	*p;
 	int		len;
