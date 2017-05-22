@@ -6,13 +6,13 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 15:12:27 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/19 19:36:30 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 13:46:28 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	reset_flag(t_flag *flag)
+void			reset_flag(t_flag *flag)
 {
 	flag->flag['l'] = 0;
 	flag->flag['L'] = 0;
@@ -30,7 +30,7 @@ void	reset_flag(t_flag *flag)
 	flag->id = 0;
 }
 
-void	init_cvt(t_flag *flag)
+static	void	init_cvt(t_flag *flag)
 {
 	flag->cvt['d'] = &ft_printf_cvt_d;
 	flag->cvt['i'] = &ft_printf_cvt_d;
@@ -46,21 +46,9 @@ void	init_cvt(t_flag *flag)
 	flag->cvt['p'] = &ft_printf_cvt_x;
 	flag->cvt['C'] = &ft_printf_cvt_lc;
 	flag->cvt['S'] = &ft_printf_cvt_ls;
-/*	flag->cvt['D'] = &ft_printf_cvt_ld;
-	flag->cvt['o'] = &ft_printf_cvt_o;
-	flag->cvt['O'] = &ft_printf_cvt_lo;
-	flag->cvt['u'] = &ft_printf_cvt_u;
-	flag->cvt['U'] = &ft_printf_cvt_lu;
-	flag->cvt['x'] = &ft_printf_cvt_x;
-	flag->cvt['X'] = &ft_printf_cvt_x;
-	flag->cvt['c'] = &ft_printf_cvt_c;
-	flag->cvt['C'] = &ft_printf_cvt_lc;
-	flag->cvt['p'] = &ft_printf_cvt_p;
-	flag->cvt['s'] = &ft_printf_cvt_s;
-	flag->cvt['S'] = &ft_printf_cvt_ls;*/
 }
 
-void	init_flag(t_flag *flag)
+void			init_flag(t_flag *flag)
 {
 	flag->init++;
 	init_cvt(flag);

@@ -6,13 +6,13 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:28:01 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/19 10:45:04 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 14:12:31 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void    add_to_buff(t_flag *flag, char c)
+void	add_to_buff(t_flag *flag, char c)
 {
 	if (flag->i == BUFFSIZE)
 	{
@@ -27,6 +27,8 @@ void    add_to_buff(t_flag *flag, char c)
 
 void	fmt_print(t_flag *flag, const char *fmt)
 {
+	void (*fun_ptr)(va_list *app, struct s_flag *flag);
+
 	flag->i = 0;
 	while (*fmt)
 	{
@@ -38,8 +40,9 @@ void	fmt_print(t_flag *flag, const char *fmt)
 				init_flag(flag);
 			reset_flag(flag);
 			get_flags(flag, &fmt);
+			fun_ptr = flag->cvt[flag->id];
 			if (flag->cvt[flag->id])
-				(flag->cvt[flag->id])(&(flag->ap), flag);
+				fun_ptr(&(flag->ap), flag);
 			else
 				fmt--;
 		}

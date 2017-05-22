@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/11 13:51:18 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/11 16:56:29 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 13:10:10 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ long long	get_unsigned(va_list *ap, t_flag *flag)
 		return (va_arg(*ap, unsigned long long));
 	if (flag->flag['l'])
 	{
-		return (flag->id == 'c' ? va_arg(*ap, wchar_t) 
+		return (flag->id == 'c' ? va_arg(*ap, wchar_t)
 				: va_arg(*ap, unsigned long));
 	}
 	if (flag->flag['h'])
@@ -34,7 +34,8 @@ long long	get_unsigned(va_list *ap, t_flag *flag)
 
 long long	ft_printf_get_arg(va_list *ap, t_flag *flag)
 {
-	if (flag->id == 'o' || flag->id == 'x' || flag->id == 'X' || flag->id == 'u')
+	if (flag->id == 'o' || flag->id == 'x' || flag->id == 'X' ||
+			flag->id == 'u')
 		return (get_unsigned(ap, flag));
 	else
 	{

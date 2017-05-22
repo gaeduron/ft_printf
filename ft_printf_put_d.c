@@ -6,17 +6,17 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:19:14 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/22 12:15:30 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 13:42:13 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static void	ft_put_space(int call, int s_len, int len, t_flag *flag)
+static	void	ft_put_space(int call, int s_len, int len, t_flag *flag)
 {
 	if (call == 1)
 	{
-		while (!flag->flag['-'] && !flag->flag['0'] && flag->space > 
+		while (!flag->flag['-'] && !flag->flag['0'] && flag->space >
 				(flag->precision > len ? flag->precision : len) + s_len)
 			add_to_buff(flag, ' ');
 	}
@@ -27,14 +27,14 @@ static void	ft_put_space(int call, int s_len, int len, t_flag *flag)
 	}
 }
 
-static void	ft_put_sign(t_flag *flag, int s_len)
+static	void	ft_put_sign(t_flag *flag, int s_len)
 {
 	if (flag->flag['#'] && s_len)
 	{
 		add_to_buff(flag, '0');
 		flag->id == 'x' || flag->id == 'p' ? add_to_buff(flag, 'x') : 0;
 		flag->id == 'X' ? add_to_buff(flag, 'X') : 0;
-		flag->precision >= 0 && flag->id == 'o' ? 
+		flag->precision >= 0 && flag->id == 'o' ?
 			(flag->precision -= s_len) : 0;
 	}
 	else
@@ -45,15 +45,15 @@ static void	ft_put_sign(t_flag *flag, int s_len)
 	}
 }
 
-static void	ft_put_precision_or_0(t_flag *flag, int len)
+static	void	ft_put_precision_or_0(t_flag *flag, int len)
 {
 	if (flag->precision == -1 && flag->flag['0'])
 		flag->precision = flag->space;
 	while (flag->precision-- > len)
-		add_to_buff(flag, '0');	
+		add_to_buff(flag, '0');
 }
 
-static void	ft_put_value(t_flag *flag, char *p)
+static	void	ft_put_value(t_flag *flag, char *p)
 {
 	if (flag->id == 'c')
 		add_to_buff(flag, *p++);
@@ -61,7 +61,7 @@ static void	ft_put_value(t_flag *flag, char *p)
 		add_to_buff(flag, *p++);
 }
 
-void	ft_printf_putd(char *p, int len, t_flag *flag, int s_len)
+void			ft_printf_putd(char *p, int len, t_flag *flag, int s_len)
 {
 	flag->space ? ft_put_space(1, s_len, len, flag) : 0;
 	s_len ? ft_put_sign(flag, s_len) : 0;
