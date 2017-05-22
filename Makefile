@@ -6,7 +6,7 @@
 #    By: gduron <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/19 20:14:23 by gduron            #+#    #+#              #
-#    Updated: 2017/05/19 19:54:37 by gduron           ###   ########.fr        #
+#    Updated: 2017/05/22 14:18:06 by gduron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,10 +84,8 @@ ft_printf_format_and_print.c \
 ft_printf_get_flag.c \
 ft_printf_init_flag.c \
 ft_printf_get_arg.c\
-\
 ft_printf_put_d.c \
 ft_printf_put_ls.c \
-\
 ft_printf_cvt_d.c \
 ft_printf_cvt_pourcent.c \
 ft_printf_cvt_u.c \
@@ -98,7 +96,6 @@ ft_printf_cvt_s.c \
 ft_printf_put_s.c \
 ft_printf_cvt_lc.c \
 ft_printf_cvt_ls.c \
-#ft_printf_util.c \
 
 CC = -Wall -Werror -Wextra #-g -fsanitize=address
 
@@ -125,7 +122,7 @@ fclean: clean
 	@rm -f $(NAME)
 
 t: all
-	@gcc libftprintf.a main.c -I includes -g -fsanitize=address
+	@gcc libftprintf.a main_dir/main.c -I includes -g -fsanitize=address
 	@echo "Compilation (main):\033[92m OK\033[0m"
 
 re: fclean all
