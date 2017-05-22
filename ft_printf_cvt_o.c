@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:18:13 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/16 16:27:05 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 11:56:32 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ void    ft_printf_cvt_o(va_list *app, t_flag *flag)
 			flag->flag['j']) ? nbr : (unsigned int)nbr;
 	p = cvt_o(nbr > 0 ? nbr : -nbr, buf);
 	flag->precision == 0 && *p == '0' ? p = (buf + sizeof buf) : 0;
-	s_len = flag->flag['#'] && !nbr ? 1 : 0;
+	s_len = flag->flag['#'] && *p != '0' ? 1 : 0;
 	ft_printf_putd(p, (buf + sizeof buf) - p, flag, s_len);
 }

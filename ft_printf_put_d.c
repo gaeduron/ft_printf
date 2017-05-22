@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:19:14 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/15 20:29:04 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 12:02:20 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	ft_put_sign(t_flag *flag, int s_len)
 		add_to_buff(flag, '0');
 		flag->id == 'x' || flag->id == 'p' ? add_to_buff(flag, 'x') : 0;
 		flag->id == 'X' ? add_to_buff(flag, 'X') : 0;
+		flag->precision >= 0 && flag->id == 'o' ? 
+			(flag->precision -= s_len) : 0;
 	}
 	else
 	{

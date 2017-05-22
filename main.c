@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 13:54:03 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/19 20:06:44 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 12:05:58 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,10 @@ int		main()
 	printf("%S || %s\n", L"∑", ("∑"));
 */
 //	printf("%lC\n\n=>put_wchar: ", L'™');
-	ft_printf("printing 'U+1F60E' => %#.o\n", 42);
+//	ft_printf("printing 'U+1F60E' => %lc\n", 0x1f60e);
+//	ft_printf("printing 'U+1F60E' => %lc\n", L'猫');
+//	ft_printf("printing 'U+1F60E' => %lc\n", 0x7ee);
+//	ft_printf("printing 'U+1F60E' => %lc\n", 'c');
 //	put_wchar(0);
 //	printf("  \n");
 
@@ -148,5 +151,22 @@ int		main()
 	//	printf("return = %d\n", printf("{%C}\n", L'◊'));
 	//	s[0] = *(&i + 1);
 	//	write(1, &c, 4);
+	// _______undefined behavior test_________
+	//printf("{%10R}");
+	//printf("{%03c}", 0);
+	//printf("{%05s}", "abc");
+	//printf("{%030S}", L"我是一只猫。");
+	//printf("{%05p}", 0);
+	//printf("{%05p}", 0x9efa0);
+	//printf("{%-15Z}", 123);
+	//printf("%#.O", 0);
+	//printf("%.4S", L"我是一只猫。");
+	//printf("%15.4S", L"我是一只猫。");
+	//printf("%.3%");
+	//printf("{%05.c}", 0);
+	//printf("{%05.s}", 0);
+	//printf("{%05.%}", 0);
+	//printf("{%05.Z}", 0);
+	//printf("{%05.S}", L"42 c est cool");
 	return (0);
 }

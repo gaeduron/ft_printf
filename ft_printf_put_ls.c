@@ -6,7 +6,7 @@
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/08 18:19:14 by gduron            #+#    #+#             */
-/*   Updated: 2017/05/19 18:41:43 by gduron           ###   ########.fr       */
+/*   Updated: 2017/05/22 10:54:01 by gduron           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ static void		put_wchar(t_flag *flag, wchar_t c)
 		tmp_mask = u_fmt ? c & 0b00111111 : c;
 		tmp_mask <<= 8 * (nboctet - 1);
 		u_fmt = tmp_mask | u_fmt;
-		c = c > 0x7F ? c >> 6 : 0;
+		c = (size_t)c == u_fmt ? c >> 7: c >> 6;
 		nboctet = c ? nboctet + 1 : nboctet;
 	}
+	u_fmt > 0b11110000100000001000000010000000 ? nboctet++ : 0;
 	while (nboctet)
 	{
 		if (flag->precision-- > 0)
